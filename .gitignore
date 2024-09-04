@@ -55,7 +55,7 @@ Plugins/*/Binaries/*
 Build/*
 
 # Externel content
-ExternelContent/*
+Content/ExternelContent/*
 
 # Whitelist PakBlacklist-<BuildConfiguration>.txt files
 !Build/*/
