@@ -2,6 +2,10 @@
 .vs/
 .vscode/
 .idea/
+.vsconfig
+
+.vsconfig
+.ignore
 
 # Compiled Object files
 *.slo
