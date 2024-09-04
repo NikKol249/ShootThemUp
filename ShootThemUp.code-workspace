@@ -1,0 +1,613 @@
+{
+	"folders": [
+		{
+			"name": "ShootThemUp",
+			"path": "."
+		},
+		{
+			"name": "UE5",
+			"path": "C:\\UE_5.3"
+		}
+	],
+	"settings": {
+		"typescript.tsc.autoDetect": "off",
+		"npm.autoDetect": "off"
+	},
+	"extensions": {
+		"recommendations": [
+			"ms-vscode.cpptools",
+			"ms-dotnettools.csharp"
+		]
+	},
+	"tasks": {
+		"version": "2.0.0",
+		"tasks": [
+			{
+				"label": "ShootThemUp Win64 Debug Build",
+				"group": "build",
+				"command": "Engine\\Build\\BatchFiles\\Build.bat",
+				"args": [
+					"ShootThemUp",
+					"Win64",
+					"Debug",
+					"G:\\Projects\\UE\\ShootThemUp\\ShootThemUp.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "C:\\UE_5.3"
+				}
+			},
+			{
+				"label": "ShootThemUp Win64 Debug Rebuild",
+				"group": "build",
+				"command": "Engine\\Build\\BatchFiles\\Build.bat",
+				"args": [
+					"ShootThemUp",
+					"Win64",
+					"Debug",
+					"G:\\Projects\\UE\\ShootThemUp\\ShootThemUp.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"dependsOn": [
+					"ShootThemUp Win64 Debug Clean"
+				],
+				"type": "shell",
+				"options": {
+					"cwd": "C:\\UE_5.3"
+				}
+			},
+			{
+				"label": "ShootThemUp Win64 Debug Clean",
+				"group": "build",
+				"command": "Engine\\Build\\BatchFiles\\Clean.bat",
+				"args": [
+					"ShootThemUp",
+					"Win64",
+					"Debug",
+					"G:\\Projects\\UE\\ShootThemUp\\ShootThemUp.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "C:\\UE_5.3"
+				}
+			},
+			{
+				"label": "ShootThemUp Win64 DebugGame Build",
+				"group": "build",
+				"command": "Engine\\Build\\BatchFiles\\Build.bat",
+				"args": [
+					"ShootThemUp",
+					"Win64",
+					"DebugGame",
+					"G:\\Projects\\UE\\ShootThemUp\\ShootThemUp.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "C:\\UE_5.3"
+				}
+			},
+			{
+				"label": "ShootThemUp Win64 DebugGame Rebuild",
+				"group": "build",
+				"command": "Engine\\Build\\BatchFiles\\Build.bat",
+				"args": [
+					"ShootThemUp",
+					"Win64",
+					"DebugGame",
+					"G:\\Projects\\UE\\ShootThemUp\\ShootThemUp.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"dependsOn": [
+					"ShootThemUp Win64 DebugGame Clean"
+				],
+				"type": "shell",
+				"options": {
+					"cwd": "C:\\UE_5.3"
+				}
+			},
+			{
+				"label": "ShootThemUp Win64 DebugGame Clean",
+				"group": "build",
+				"command": "Engine\\Build\\BatchFiles\\Clean.bat",
+				"args": [
+					"ShootThemUp",
+					"Win64",
+					"DebugGame",
+					"G:\\Projects\\UE\\ShootThemUp\\ShootThemUp.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "C:\\UE_5.3"
+				}
+			},
+			{
+				"label": "ShootThemUp Win64 Development Build",
+				"group": "build",
+				"command": "Engine\\Build\\BatchFiles\\Build.bat",
+				"args": [
+					"ShootThemUp",
+					"Win64",
+					"Development",
+					"G:\\Projects\\UE\\ShootThemUp\\ShootThemUp.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "C:\\UE_5.3"
+				}
+			},
+			{
+				"label": "ShootThemUp Win64 Development Rebuild",
+				"group": "build",
+				"command": "Engine\\Build\\BatchFiles\\Build.bat",
+				"args": [
+					"ShootThemUp",
+					"Win64",
+					"Development",
+					"G:\\Projects\\UE\\ShootThemUp\\ShootThemUp.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"dependsOn": [
+					"ShootThemUp Win64 Development Clean"
+				],
+				"type": "shell",
+				"options": {
+					"cwd": "C:\\UE_5.3"
+				}
+			},
+			{
+				"label": "ShootThemUp Win64 Development Clean",
+				"group": "build",
+				"command": "Engine\\Build\\BatchFiles\\Clean.bat",
+				"args": [
+					"ShootThemUp",
+					"Win64",
+					"Development",
+					"G:\\Projects\\UE\\ShootThemUp\\ShootThemUp.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "C:\\UE_5.3"
+				}
+			},
+			{
+				"label": "ShootThemUp Win64 Test Build",
+				"group": "build",
+				"command": "Engine\\Build\\BatchFiles\\Build.bat",
+				"args": [
+					"ShootThemUp",
+					"Win64",
+					"Test",
+					"G:\\Projects\\UE\\ShootThemUp\\ShootThemUp.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "C:\\UE_5.3"
+				}
+			},
+			{
+				"label": "ShootThemUp Win64 Test Rebuild",
+				"group": "build",
+				"command": "Engine\\Build\\BatchFiles\\Build.bat",
+				"args": [
+					"ShootThemUp",
+					"Win64",
+					"Test",
+					"G:\\Projects\\UE\\ShootThemUp\\ShootThemUp.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"dependsOn": [
+					"ShootThemUp Win64 Test Clean"
+				],
+				"type": "shell",
+				"options": {
+					"cwd": "C:\\UE_5.3"
+				}
+			},
+			{
+				"label": "ShootThemUp Win64 Test Clean",
+				"group": "build",
+				"command": "Engine\\Build\\BatchFiles\\Clean.bat",
+				"args": [
+					"ShootThemUp",
+					"Win64",
+					"Test",
+					"G:\\Projects\\UE\\ShootThemUp\\ShootThemUp.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "C:\\UE_5.3"
+				}
+			},
+			{
+				"label": "ShootThemUp Win64 Shipping Build",
+				"group": "build",
+				"command": "Engine\\Build\\BatchFiles\\Build.bat",
+				"args": [
+					"ShootThemUp",
+					"Win64",
+					"Shipping",
+					"G:\\Projects\\UE\\ShootThemUp\\ShootThemUp.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "C:\\UE_5.3"
+				}
+			},
+			{
+				"label": "ShootThemUp Win64 Shipping Rebuild",
+				"group": "build",
+				"command": "Engine\\Build\\BatchFiles\\Build.bat",
+				"args": [
+					"ShootThemUp",
+					"Win64",
+					"Shipping",
+					"G:\\Projects\\UE\\ShootThemUp\\ShootThemUp.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"dependsOn": [
+					"ShootThemUp Win64 Shipping Clean"
+				],
+				"type": "shell",
+				"options": {
+					"cwd": "C:\\UE_5.3"
+				}
+			},
+			{
+				"label": "ShootThemUp Win64 Shipping Clean",
+				"group": "build",
+				"command": "Engine\\Build\\BatchFiles\\Clean.bat",
+				"args": [
+					"ShootThemUp",
+					"Win64",
+					"Shipping",
+					"G:\\Projects\\UE\\ShootThemUp\\ShootThemUp.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "C:\\UE_5.3"
+				}
+			},
+			{
+				"label": "ShootThemUpEditor Win64 Debug Build",
+				"group": "build",
+				"command": "Engine\\Build\\BatchFiles\\Build.bat",
+				"args": [
+					"ShootThemUpEditor",
+					"Win64",
+					"Debug",
+					"G:\\Projects\\UE\\ShootThemUp\\ShootThemUp.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "C:\\UE_5.3"
+				}
+			},
+			{
+				"label": "ShootThemUpEditor Win64 Debug Rebuild",
+				"group": "build",
+				"command": "Engine\\Build\\BatchFiles\\Build.bat",
+				"args": [
+					"ShootThemUpEditor",
+					"Win64",
+					"Debug",
+					"G:\\Projects\\UE\\ShootThemUp\\ShootThemUp.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"dependsOn": [
+					"ShootThemUpEditor Win64 Debug Clean"
+				],
+				"type": "shell",
+				"options": {
+					"cwd": "C:\\UE_5.3"
+				}
+			},
+			{
+				"label": "ShootThemUpEditor Win64 Debug Clean",
+				"group": "build",
+				"command": "Engine\\Build\\BatchFiles\\Clean.bat",
+				"args": [
+					"ShootThemUpEditor",
+					"Win64",
+					"Debug",
+					"G:\\Projects\\UE\\ShootThemUp\\ShootThemUp.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "C:\\UE_5.3"
+				}
+			},
+			{
+				"label": "ShootThemUpEditor Win64 DebugGame Build",
+				"group": "build",
+				"command": "Engine\\Build\\BatchFiles\\Build.bat",
+				"args": [
+					"ShootThemUpEditor",
+					"Win64",
+					"DebugGame",
+					"G:\\Projects\\UE\\ShootThemUp\\ShootThemUp.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "C:\\UE_5.3"
+				}
+			},
+			{
+				"label": "ShootThemUpEditor Win64 DebugGame Rebuild",
+				"group": "build",
+				"command": "Engine\\Build\\BatchFiles\\Build.bat",
+				"args": [
+					"ShootThemUpEditor",
+					"Win64",
+					"DebugGame",
+					"G:\\Projects\\UE\\ShootThemUp\\ShootThemUp.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"dependsOn": [
+					"ShootThemUpEditor Win64 DebugGame Clean"
+				],
+				"type": "shell",
+				"options": {
+					"cwd": "C:\\UE_5.3"
+				}
+			},
+			{
+				"label": "ShootThemUpEditor Win64 DebugGame Clean",
+				"group": "build",
+				"command": "Engine\\Build\\BatchFiles\\Clean.bat",
+				"args": [
+					"ShootThemUpEditor",
+					"Win64",
+					"DebugGame",
+					"G:\\Projects\\UE\\ShootThemUp\\ShootThemUp.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "C:\\UE_5.3"
+				}
+			},
+			{
+				"label": "ShootThemUpEditor Win64 Development Build",
+				"group": "build",
+				"command": "Engine\\Build\\BatchFiles\\Build.bat",
+				"args": [
+					"ShootThemUpEditor",
+					"Win64",
+					"Development",
+					"G:\\Projects\\UE\\ShootThemUp\\ShootThemUp.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "C:\\UE_5.3"
+				}
+			},
+			{
+				"label": "ShootThemUpEditor Win64 Development Rebuild",
+				"group": "build",
+				"command": "Engine\\Build\\BatchFiles\\Build.bat",
+				"args": [
+					"ShootThemUpEditor",
+					"Win64",
+					"Development",
+					"G:\\Projects\\UE\\ShootThemUp\\ShootThemUp.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"dependsOn": [
+					"ShootThemUpEditor Win64 Development Clean"
+				],
+				"type": "shell",
+				"options": {
+					"cwd": "C:\\UE_5.3"
+				}
+			},
+			{
+				"label": "ShootThemUpEditor Win64 Development Clean",
+				"group": "build",
+				"command": "Engine\\Build\\BatchFiles\\Clean.bat",
+				"args": [
+					"ShootThemUpEditor",
+					"Win64",
+					"Development",
+					"G:\\Projects\\UE\\ShootThemUp\\ShootThemUp.uproject",
+					"-waitmutex"
+				],
+				"problemMatcher": "$msCompile",
+				"type": "shell",
+				"options": {
+					"cwd": "C:\\UE_5.3"
+				}
+			}
+		]
+	},
+	"launch": {
+		"version": "0.2.0",
+		"configurations": [
+			{
+				"name": "Launch ShootThemUp (Debug)",
+				"request": "launch",
+				"program": "G:\\Projects\\UE\\ShootThemUp\\Binaries\\Win64\\UnrealGame-Win64-Debug.exe",
+				"preLaunchTask": "ShootThemUp Win64 Debug Build",
+				"args": [
+				],
+				"cwd": "C:\\UE_5.3",
+				"stopAtEntry": false,
+				"console": "externalTerminal",
+				"type": "cppvsdbg",
+				"visualizerFile": "C:\\UE_5.3\\Engine\\Extras\\VisualStudioDebugging\\Unreal.natvis",
+				"sourceFileMap": {
+					"D:\\build\\++UE5\\Sync": "C:\\UE_5.3"
+				}
+			},
+			{
+				"name": "Launch ShootThemUp (DebugGame)",
+				"request": "launch",
+				"program": "G:\\Projects\\UE\\ShootThemUp\\Binaries\\Win64\\UnrealGame-Win64-DebugGame.exe",
+				"preLaunchTask": "ShootThemUp Win64 DebugGame Build",
+				"args": [
+				],
+				"cwd": "C:\\UE_5.3",
+				"stopAtEntry": false,
+				"console": "externalTerminal",
+				"type": "cppvsdbg",
+				"visualizerFile": "C:\\UE_5.3\\Engine\\Extras\\VisualStudioDebugging\\Unreal.natvis",
+				"sourceFileMap": {
+					"D:\\build\\++UE5\\Sync": "C:\\UE_5.3"
+				}
+			},
+			{
+				"name": "Launch ShootThemUp (Development)",
+				"request": "launch",
+				"program": "G:\\Projects\\UE\\ShootThemUp\\Binaries\\Win64\\UnrealGame.exe",
+				"preLaunchTask": "ShootThemUp Win64 Development Build",
+				"args": [
+				],
+				"cwd": "C:\\UE_5.3",
+				"stopAtEntry": false,
+				"console": "externalTerminal",
+				"type": "cppvsdbg",
+				"visualizerFile": "C:\\UE_5.3\\Engine\\Extras\\VisualStudioDebugging\\Unreal.natvis",
+				"sourceFileMap": {
+					"D:\\build\\++UE5\\Sync": "C:\\UE_5.3"
+				}
+			},
+			{
+				"name": "Launch ShootThemUp (Test)",
+				"request": "launch",
+				"program": "G:\\Projects\\UE\\ShootThemUp\\Binaries\\Win64\\UnrealGame-Win64-Test.exe",
+				"preLaunchTask": "ShootThemUp Win64 Test Build",
+				"args": [
+				],
+				"cwd": "C:\\UE_5.3",
+				"stopAtEntry": false,
+				"console": "externalTerminal",
+				"type": "cppvsdbg",
+				"visualizerFile": "C:\\UE_5.3\\Engine\\Extras\\VisualStudioDebugging\\Unreal.natvis",
+				"sourceFileMap": {
+					"D:\\build\\++UE5\\Sync": "C:\\UE_5.3"
+				}
+			},
+			{
+				"name": "Launch ShootThemUp (Shipping)",
+				"request": "launch",
+				"program": "G:\\Projects\\UE\\ShootThemUp\\Binaries\\Win64\\UnrealGame-Win64-Shipping.exe",
+				"preLaunchTask": "ShootThemUp Win64 Shipping Build",
+				"args": [
+				],
+				"cwd": "C:\\UE_5.3",
+				"stopAtEntry": false,
+				"console": "externalTerminal",
+				"type": "cppvsdbg",
+				"visualizerFile": "C:\\UE_5.3\\Engine\\Extras\\VisualStudioDebugging\\Unreal.natvis",
+				"sourceFileMap": {
+					"D:\\build\\++UE5\\Sync": "C:\\UE_5.3"
+				}
+			},
+			{
+				"name": "Launch ShootThemUpEditor (Debug)",
+				"request": "launch",
+				"program": "C:\\UE_5.3\\Engine\\Binaries\\Win64\\UnrealEditor-Win64-Debug.exe",
+				"preLaunchTask": "ShootThemUpEditor Win64 Debug Build",
+				"args": [
+					"G:\\Projects\\UE\\ShootThemUp\\ShootThemUp.uproject"
+				],
+				"cwd": "C:\\UE_5.3",
+				"stopAtEntry": false,
+				"console": "externalTerminal",
+				"type": "cppvsdbg",
+				"visualizerFile": "C:\\UE_5.3\\Engine\\Extras\\VisualStudioDebugging\\Unreal.natvis",
+				"sourceFileMap": {
+					"D:\\build\\++UE5\\Sync": "C:\\UE_5.3"
+				}
+			},
+			{
+				"name": "Launch ShootThemUpEditor (DebugGame)",
+				"request": "launch",
+				"program": "C:\\UE_5.3\\Engine\\Binaries\\Win64\\UnrealEditor-Win64-DebugGame.exe",
+				"preLaunchTask": "ShootThemUpEditor Win64 DebugGame Build",
+				"args": [
+					"G:\\Projects\\UE\\ShootThemUp\\ShootThemUp.uproject"
+				],
+				"cwd": "C:\\UE_5.3",
+				"stopAtEntry": false,
+				"console": "externalTerminal",
+				"type": "cppvsdbg",
+				"visualizerFile": "C:\\UE_5.3\\Engine\\Extras\\VisualStudioDebugging\\Unreal.natvis",
+				"sourceFileMap": {
+					"D:\\build\\++UE5\\Sync": "C:\\UE_5.3"
+				}
+			},
+			{
+				"name": "Launch ShootThemUpEditor (Development)",
+				"request": "launch",
+				"program": "C:\\UE_5.3\\Engine\\Binaries\\Win64\\UnrealEditor.exe",
+				"preLaunchTask": "ShootThemUpEditor Win64 Development Build",
+				"args": [
+					"G:\\Projects\\UE\\ShootThemUp\\ShootThemUp.uproject"
+				],
+				"cwd": "C:\\UE_5.3",
+				"stopAtEntry": false,
+				"console": "externalTerminal",
+				"type": "cppvsdbg",
+				"visualizerFile": "C:\\UE_5.3\\Engine\\Extras\\VisualStudioDebugging\\Unreal.natvis",
+				"sourceFileMap": {
+					"D:\\build\\++UE5\\Sync": "C:\\UE_5.3"
+				}
+			},
+			{
+				"name": "Generate Project Files",
+				"type": "coreclr",
+				"request": "launch",
+				"preLaunchTask": "UnrealBuildTool Win64 Development Build",
+				"program": "C:\\UE_5.3\\Engine\\Build\\BatchFiles\\RunUBT.bat",
+				"args": [
+					"-projectfiles",
+					"-vscode",
+					"-project=G:\\Projects\\UE\\ShootThemUp\\ShootThemUp.uproject",
+					"-game",
+					"-engine",
+					"-dotnet"
+				],
+				"console": "externalTerminal",
+				"stopAtEntry": false,
+				"cwd": "C:\\UE_5.3"
+			}
+		]
+	}
+}
