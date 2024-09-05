@@ -5,11 +5,11 @@
 #include "Engine/World.h"
 #include "DrawDebugHelpers.h"
 
-DEFINE_LOG_CATEGORY_STATIC(BaseWeaponLog, All, All)
+DEFINE_LOG_CATEGORY_STATIC(RifleWeaponLog, All, All)
 
 void ASTURifleWeapon::StartFire()
 {
-	UE_LOG(BaseWeaponLog, Display, TEXT("Fire!"));
+	UE_LOG(RifleWeaponLog, Display, TEXT("Fire!"));
 	
 	GetWorldTimerManager().SetTimer(ShotTimerHandle, this, &ASTURifleWeapon::MakeShot, TimeBetweenShots, true);
 	MakeShot();
@@ -17,7 +17,7 @@ void ASTURifleWeapon::StartFire()
 
 void ASTURifleWeapon::StopFire()
 {
-	UE_LOG(BaseWeaponLog, Display, TEXT("Fire!"));
+	UE_LOG(RifleWeaponLog, Display, TEXT("Fire!"));
 
 	GetWorldTimerManager().ClearTimer(ShotTimerHandle);
 }
@@ -50,7 +50,7 @@ void ASTURifleWeapon::MakeShot()
 		DrawDebugSphere(GetWorld(), HitResult.ImpactPoint, 10.0f, 24, FColor::Red,
 			false, 5.0f);
 
-		UE_LOG(BaseWeaponLog, Display, TEXT("Bone: %s"),
+		UE_LOG(RifleWeaponLog, Display, TEXT("Bone: %s"),
 			*HitResult.BoneName.ToString());
 	}
 	else
