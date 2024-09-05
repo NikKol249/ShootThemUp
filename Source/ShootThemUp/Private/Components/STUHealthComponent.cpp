@@ -9,18 +9,11 @@
 
 DEFINE_LOG_CATEGORY_STATIC(LogHealthComponent, All, All)
 
-// Sets default values for this component's properties
 USTUHealthComponent::USTUHealthComponent()
 {
-	// Set this component to be initialized when the game starts, and to be ticked every frame.  You can turn these features
-	// off to improve performance if you don't need them.
 	PrimaryComponentTick.bCanEverTick = false;
-
-	// ...
 }
 
-
-// Called when the game starts
 void USTUHealthComponent::BeginPlay()
 {
 	Super::BeginPlay();
@@ -75,7 +68,7 @@ void USTUHealthComponent::HealUpdate()
 {
     SetHealth(Health + HealModifier);
 
-	if (FMath::IsNearlyEqual(Health, MaxHealth) && GetWorld())
+	if (IsHealthFull() && GetWorld())
 	{
         GetWorld()->GetTimerManager().ClearTimer(HealTimerHandle);
 	}
@@ -85,4 +78,17 @@ void USTUHealthComponent::SetHealth(float NewHealth)
 {
     Health = FMath::Clamp(NewHealth, 0.0f, MaxHealth);
     OnHealthChanged.Broadcast(Health);
+}
+
+bool USTUHealthComponent::TryToAddHealth(float HealthAmount)
+{
+	if(IsDead() || IsHealthFull()) return false;
+
+	SetHealth(Health + HealthAmount);
+	return true;
+}
+
+bool USTUHealthComponent::IsHealthFull() const
+{
+	return FMath::IsNearlyEqual(Health, MaxHealth);
 }
