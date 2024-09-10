@@ -48,14 +48,14 @@ void ASTUBaseCharacter::BeginPlay()
     check(HealthTextComponent);
     check(GetCharacterMovement());
 
-    OnHealthChanged(HealthComponent->GetHealth());
+    OnHealthChanged(HealthComponent->GetHealth(), 0.0f);
     HealthComponent->OnDeath.AddUObject(this, &ASTUBaseCharacter::OnDeath);
     HealthComponent->OnHealthChanged.AddUObject(this, &ASTUBaseCharacter::OnHealthChanged);
 
     LandedDelegate.AddDynamic(this, &ASTUBaseCharacter::OnGroundLanded);
 }
 
-void ASTUBaseCharacter::OnHealthChanged(float Health)
+void ASTUBaseCharacter::OnHealthChanged(float Health, float HealthDelta)
 {
     HealthTextComponent->SetText(FText::FromString(FString::Printf(TEXT("%.0f"), Health)));
 }
@@ -72,6 +72,7 @@ void ASTUBaseCharacter::SetupPlayerInputComponent(UInputComponent *PlayerInputCo
     Super::SetupPlayerInputComponent(PlayerInputComponent);
     check(PlayerInputComponent);
     check(WeaponComponent);
+	check(GetMesh());
 
     PlayerInputComponent->BindAxis("MoveForwardBackward", this, &ASTUBaseCharacter::MoveForwardBackward);
     PlayerInputComponent->BindAxis("MoveRightLeft", this, &ASTUBaseCharacter::MoveRightLeft);
@@ -142,7 +143,7 @@ void ASTUBaseCharacter::OnDeath()
 {
     UE_LOG(BaseCharacterLog, Display, TEXT("Player %s is dead"), *GetName());
 
-    PlayAnimMontage(DeathAnimMontage);
+    // PlayAnimMontage(DeathAnimMontage);
 
     GetCharacterMovement()->DisableMovement();
 
@@ -154,6 +155,9 @@ void ASTUBaseCharacter::OnDeath()
     }
 	GetCapsuleComponent()->SetCollisionResponseToAllChannels(ECR_Ignore);
 	WeaponComponent->StopFire();
+
+	GetMesh()->SetCollisionEnabled(ECollisionEnabled::QueryAndPhysics);
+	GetMesh()->SetSimulatePhysics(true);
 }
 
 void ASTUBaseCharacter::OnGroundLanded(const FHitResult& Hit)

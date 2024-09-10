@@ -33,4 +33,5 @@ void ASTUShotgunWeapon::MakeShot()
 		Projectile->FinishSpawning(SpawnTransform);
 	}
 	DecreaseAmmo();
+	SpawnMuzzleFX();
 }

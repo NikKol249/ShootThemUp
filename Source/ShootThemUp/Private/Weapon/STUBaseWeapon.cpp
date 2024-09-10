@@ -6,6 +6,8 @@
 #include "DrawDebugHelpers.h"
 #include "GameFramework/Character.h"
 #include "GameFramework/Controller.h"
+#include "NiagaraFunctionLibrary.h"
+#include "NiagaraComponent.h"
 
 DEFINE_LOG_CATEGORY_STATIC(BaseWeaponLog, All, All)
 
@@ -89,14 +91,14 @@ bool ASTUBaseWeapon::GetTraceData(FVector& TraceStart,
 void ASTUBaseWeapon::MakeHit(FHitResult& HitResult, const FVector& TraceStart,
 	const FVector&                       TraceEnd)
 {
-	if (!GetWorld())
-		return;
+	if (!GetWorld()) return;
 
 	FCollisionQueryParams CollisionParams;
 	CollisionParams.AddIgnoredActor(GetOwner());
+	CollisionParams.bReturnPhysicalMaterial = true;
 
 	GetWorld()->LineTraceSingleByChannel(HitResult, TraceStart, TraceEnd,
-		ECollisionChannel::ECC_Visibility);
+		ECollisionChannel::ECC_Visibility, CollisionParams);
 }
 
 void ASTUBaseWeapon::DecreaseAmmo()
@@ -189,4 +191,17 @@ bool ASTUBaseWeapon::TryToAddAmmo(int32 ClipsAmount)
 		UE_LOG(BaseWeaponLog, Display, TEXT("Bullets were added"));
 	}
 	return true;
+}
+
+UNiagaraComponent* ASTUBaseWeapon::SpawnMuzzleFX()
+{
+	return UNiagaraFunctionLibrary::SpawnSystemAttached(
+		MuzzleFX,										//
+		WeaponMesh,										//
+		MuzzleSocketName,								//
+		FVector::ZeroVector,							//
+		FRotator::ZeroRotator,							//
+		EAttachLocation::SnapToTarget,					//
+		true											//
+		);
 }
