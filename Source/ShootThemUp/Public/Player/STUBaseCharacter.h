@@ -49,7 +49,7 @@ class SHOOTTHEMUP_API ASTUBaseCharacter : public ACharacter
     UPROPERTY(EditDefaultsOnly, Category = "Damage")
     FVector2D LandedDamage = FVector2D(10.f, 100.0f);
 
-
+	virtual void OnDeath();
 
     // Called when the game starts or when spawned
     virtual void BeginPlay() override;
@@ -77,8 +77,7 @@ class SHOOTTHEMUP_API ASTUBaseCharacter : public ACharacter
     void OnStartRunning();
     void OnStopRunning();
 	void OnStartFire();
-
-    void OnDeath();
+	
     void OnHealthChanged(float Health, float HealthDelta);
 
     UFUNCTION()
